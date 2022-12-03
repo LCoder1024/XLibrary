@@ -1,0 +1,63 @@
+apply plugin: 'com.android.library'
+apply plugin: 'org.jetbrains.kotlin.android'
+apply from: '../maven-publish.gradle'
+
+android {
+    namespace 'org.devio.xlibrary'
+    compileSdk 33
+    defaultConfig {
+        minSdk 23
+        targetSdk 33
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+    //RecyclerView的Adapter
+    api "io.github.cymchad:BaseRecyclerViewAdapterHelper:4.0.0-beta02"
+    //Android6.0及以上动态权限
+    api 'com.guolindev.permissionx:permissionx:1.7.1'
+    //Rxjava3
+    api "io.reactivex.rxjava3:rxjava:3.1.5"
+    api 'io.reactivex.rxjava3:rxandroid:3.0.2'
+    //Retrofit2
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
+    api 'com.squareup.retrofit2:converter-gson:2.9.0'
+    api 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+    //ImmersionBar
+    api 'com.geyifeng.immersionbar:immersionbar:3.2.2'
+    //SmartRefreshLayout
+    api 'io.github.scwang90:refresh-layout-kernel:2.0.5'
+    api 'io.github.scwang90:refresh-header-classics:2.0.5'
+    api 'io.github.scwang90:refresh-header-material:2.0.5'
+    //Glide
+    api 'com.github.bumptech.glide:glide:4.14.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+    //MMKV
+    api 'com.tencent:mmkv:1.2.14'
+    //
+    api 'com.blankj:utilcodex:1.31.0'
+}

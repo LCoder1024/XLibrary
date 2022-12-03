@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="XNavigationBar">
+        <!--返回按钮-->
+        <attr name="nav_icon" format="reference" />
+        <!--标题-->
+        <attr name="nav_title" format="string" />
+        <!--标题字体大小-->
+        <attr name="title_text_size" format="dimension" />
+        <!--标题字体颜色-->
+        <attr name="title_text_color" format="color" />
+        <!--按钮横向内间距-->
+        <attr name="hor_padding" format="dimension" />
+    </declare-styleable>
+    <attr name="navigationStyle" format="reference" />
+    <!--默认属性配置-->
+    <style name="navigationStyle">
+        <item name="nav_icon">@drawable/icon_back</item>
+        <item name="title_text_size">18sp</item>
+        <item name="title_text_color">@color/black</item>
+        <item name="hor_padding">18dp</item>
+    </style>
+
+</resources>
