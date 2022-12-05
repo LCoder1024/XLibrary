@@ -5,9 +5,9 @@ def nexusPropertiesFile = rootProject.file("nexus.properties")
 def nexusProperties = new Properties()
 nexusProperties.load(new FileInputStream(nexusPropertiesFile))
 
-def GROUP_ID = 'io.github.LCoder1024'
-def ARTIFACT_ID = 'XLibrary'
-def VERSION_NAME = '1.0.3'
+def GROUP_ID = 'io.github.lcoder1024'
+def ARTIFACT_ID = 'xlibrary'
+def VERSION_NAME = '1.0.4'
 def DESCRIPTION = 'XLibrary'
 def GIT_LOCATION = 'github.com/LCoder1024/XLibrary'
 def GIT_LOCATION_URL = 'https://' + GIT_LOCATION
