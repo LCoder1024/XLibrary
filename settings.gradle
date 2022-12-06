@@ -11,6 +11,15 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
+    versionCatalogs {
+        libs {
+            version('compileSdk', '33')
+            version('minSdk', '23')
+            version('targetSdk', '33')
+            version('versionCode', '5')
+            version('versionName', '1.0.4')
+        }
+    }
 }
 rootProject.name = "XLibrary"
 include ':app'

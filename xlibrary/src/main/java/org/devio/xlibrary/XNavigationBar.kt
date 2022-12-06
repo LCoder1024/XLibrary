@@ -40,7 +40,7 @@ class XNavigationBar @JvmOverloads constructor(
 
     fun setNavListener(listener: OnClickListener) {
         if (navAttrs.navIcon != 0) {
-            val navBackView = addLeftImage(navAttrs.navIcon!!, R.id.id_nav_left_back_view)
+            val navBackView = addLeftImage(navAttrs.navIcon, R.id.id_nav_left_back_view)
             navBackView.setOnClickListener(listener)
         }
     }

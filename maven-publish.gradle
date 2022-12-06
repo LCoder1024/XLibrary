@@ -4,16 +4,25 @@ apply plugin: 'signing'
 def nexusPropertiesFile = rootProject.file("nexus.properties")
 def nexusProperties = new Properties()
 nexusProperties.load(new FileInputStream(nexusPropertiesFile))
+def NEXUS_USER_NAME = nexusProperties['nexusUsername']
+def NEXUS_USER_PWD = nexusProperties['nexusPassword']
 
 def GROUP_ID = 'io.github.lcoder1024'
 def ARTIFACT_ID = 'xlibrary'
-def VERSION_NAME = '1.0.4'
-def DESCRIPTION = 'XLibrary'
+def VERSION_NAME = libs.versions.versionName.get()
+
+def DESCRIPTION = 'xlibrary'
 def GIT_LOCATION = 'github.com/LCoder1024/XLibrary'
 def GIT_LOCATION_URL = 'https://' + GIT_LOCATION
 
+def DEVELOPER_ID = 'LCoder1024'
+def DEVELOPER_NAME = 'LCoder1024'
+def DEVELOPER_EMAIL = '947082209@qq.com'
+//仓库名称
+def MAVEN_NAME = "xlibrary"
 //仓库地址
 def MAVEN_URL = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+
 task sourceJar(type: Jar) {
     if (hasAndroidPlugin()) {
         println "======> Android"
@@ -75,9 +84,9 @@ publishing {
                 }
                 developers {
                     developer {
-                        id = 'LCoder1024'
-                        name = 'LCoder1024'
-                        email = '947082209@qq.com'
+                        id = DEVELOPER_ID
+                        name = DEVELOPER_NAME
+                        email = DEVELOPER_EMAIL
                     }
                 }
                 scm {
@@ -116,11 +125,11 @@ publishing {
 
     repositories {
         maven {
-            name "XLibrary"
+            name MAVEN_NAME
             url MAVEN_URL
             credentials {
-                username = nexusProperties['nexusUsername']
-                password = nexusProperties['nexusPassword']
+                username = NEXUS_USER_NAME
+                password = NEXUS_USER_PWD
             }
         }
     }

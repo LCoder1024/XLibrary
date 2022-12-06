@@ -4,10 +4,12 @@ apply from: '../maven-publish.gradle'
 
 android {
     namespace 'org.devio.xlibrary'
-    compileSdk 33
+    compileSdk libs.versions.compileSdk.get().toInteger()
     defaultConfig {
-        minSdk 23
-        targetSdk 33
+        minSdk libs.versions.minSdk.get().toInteger()
+        targetSdk libs.versions.targetSdk.get().toInteger()
+        versionCode libs.versions.versionCode.get().toInteger()
+        versionName libs.versions.versionName.get()
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
