@@ -1,4 +1,4 @@
-package org.devio.xlibrary;
+package org.devio.xlibrary.widget;
 
 import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;

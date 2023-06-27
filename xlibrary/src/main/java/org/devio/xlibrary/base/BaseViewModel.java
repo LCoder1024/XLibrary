@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LifecycleObserver;
 
-import org.devio.xlibrary.UIChangeLiveData;
+import org.devio.xlibrary.widget.UIChangeLiveData;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.ObservableTransformer;

@@ -3,13 +3,14 @@ apply plugin: 'org.jetbrains.kotlin.android'
 apply from: '../maven-publish.gradle'
 
 android {
+    buildFeatures {
+        dataBinding = true
+    }
     namespace 'org.devio.xlibrary'
     compileSdk libs.versions.compileSdk.get().toInteger()
     defaultConfig {
         minSdk libs.versions.minSdk.get().toInteger()
         targetSdk libs.versions.targetSdk.get().toInteger()
-        versionCode libs.versions.versionCode.get().toInteger()
-        versionName libs.versions.versionName.get()
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -39,27 +40,31 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 
     //RecyclerView的Adapter
-    api "io.github.cymchad:BaseRecyclerViewAdapterHelper:4.0.0-beta02"
+    api "io.github.cymchad:BaseRecyclerViewAdapterHelper:4.0.0-beta14"
     //Android6.0及以上动态权限
     api 'com.guolindev.permissionx:permissionx:1.7.1'
     //Rxjava3
-    api "io.reactivex.rxjava3:rxjava:3.1.5"
+    api "io.reactivex.rxjava3:rxjava:3.1.6"
     api 'io.reactivex.rxjava3:rxandroid:3.0.2'
     //Retrofit2
     api 'com.squareup.retrofit2:retrofit:2.9.0'
     api 'com.squareup.retrofit2:converter-gson:2.9.0'
     api 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+    //OKHttp3
+    api 'com.squareup.okhttp3:logging-interceptor:4.9.3'
     //ImmersionBar
     api 'com.geyifeng.immersionbar:immersionbar:3.2.2'
     //SmartRefreshLayout
-    api 'io.github.scwang90:refresh-layout-kernel:2.0.5'
-    api 'io.github.scwang90:refresh-header-classics:2.0.5'
-    api 'io.github.scwang90:refresh-header-material:2.0.5'
+    api 'io.github.scwang90:refresh-layout-kernel:2.0.6'
+    api 'io.github.scwang90:refresh-header-classics:2.0.6'
+    api 'io.github.scwang90:refresh-header-material:2.0.6'
     //Glide
-    api 'com.github.bumptech.glide:glide:4.14.2'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+    api 'com.github.bumptech.glide:glide:4.15.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
     //MMKV
-    api 'com.tencent:mmkv:1.2.14'
+    api 'com.tencent:mmkv:1.3.0'
     //
-    api 'com.blankj:utilcodex:1.31.0'
+    api 'com.blankj:utilcodex:1.31.1'
+    //popup
+    api 'com.github.li-xiaojun:XPopup:2.9.19'
 }

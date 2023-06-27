@@ -1,4 +1,4 @@
-package org.devio.xlibrary
+package org.devio.xlibrary.widget
 
 import android.content.Context
 import android.content.res.ColorStateList
@@ -13,6 +13,7 @@ import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.blankj.utilcode.util.SizeUtils
+import org.devio.xlibrary.R
 
 class XNavigationBar @JvmOverloads constructor(
     context: Context,

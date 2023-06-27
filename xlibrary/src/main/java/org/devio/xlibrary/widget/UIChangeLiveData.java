@@ -1,4 +1,4 @@
-package org.devio.xlibrary;
+package org.devio.xlibrary.widget;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LifecycleOwner;

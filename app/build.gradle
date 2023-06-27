@@ -6,6 +6,9 @@ def keystorePropertiesFile = rootProject.file("keystore.properties")
 def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 android {
+    buildFeatures {
+        dataBinding = true
+    }
     namespace 'org.devio.app'
     compileSdk libs.versions.compileSdk.get().toInteger()
 
